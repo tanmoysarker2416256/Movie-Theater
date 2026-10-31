@@ -26,6 +26,8 @@ public class Booking
     public User User { get; set; } = null!;
     public Show Show { get; set; } = null!;
 
-    public ICollection<BookingSeat> bookingSeats { get; set; }=new List<BookingSeat>();
+    public ICollection<BookingSeat> BookingSeats { get; set; }=new List<BookingSeat>();
+
+    public ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
 }
