@@ -16,9 +16,10 @@ public class User
     public string PasswordHash { get; set; } = string.Empty;
     
     public UserRole Role { get; set; }
-    public string? Name { get; set; } ;
+    public string? Name { get; set; } 
 
     public DateTime CreatedAtUtc { get; set; }
+    public ICollection<Booking> Bookings { get; set; }=new List<Booking>();
 
 
 
