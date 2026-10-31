@@ -26,4 +26,6 @@ public class Booking
     public User User { get; set; } = null!;
     public Show Show { get; set; } = null!;
 
+    public ICollection<BookingSeat> bookingSeats { get; set; }=new List<BookingSeat>();
+
 }
