@@ -19,7 +19,7 @@ public class Show
 
     public ShowStatus Status { get; set; }
 
-    public Movie Movie { get; set; } = null!; 
+    public Movie Movie { get; set; } = null!;
     public Hall Hall { get; set; } = null!;
 
     public ICollection<Booking> Bookings { get; set; } = new List<Booking>();

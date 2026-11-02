@@ -21,4 +21,5 @@ public class Movie
     public string? TrailerUrl { get; set; } 
 
     public ICollection<MovieGenre> MovieGenres { get; set; } = new List<MovieGenre>();
+    public ICollection<Show> Shows { get; set; }=new List<Show>();
 }

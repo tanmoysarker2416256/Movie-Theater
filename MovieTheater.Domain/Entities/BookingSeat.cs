@@ -1,6 +1,6 @@
 ﻿
 
-namespace MovieTheater.Domain.Entities; 
+namespace MovieTheater.Domain.Entities;
 
 public class BookingSeat
 {
@@ -18,5 +18,5 @@ public class BookingSeat
     public Booking Booking { get; set; } = null!;
 
     public Seat Seat { get; set; } = null!;
-    public Show Show { get; set; }=null!;
+    public Show Show { get; set; } = null!;
 }
