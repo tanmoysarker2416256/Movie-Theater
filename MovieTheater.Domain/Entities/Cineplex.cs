@@ -2,7 +2,7 @@
 
 namespace MovieTheater.Domain.Entities;
 
-public class Cinema
+public class Cineplex
 {
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;

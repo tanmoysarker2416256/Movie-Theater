@@ -18,7 +18,7 @@ public class MovieTheaterDbContext : DbContext , IApplicationDbContext
     }
 
 
-    public DbSet<Cinema> Cinemas => Set<Cinema>();
+    public DbSet<Cineplex> Cineplexs => Set<Cineplex>();
     public DbSet<Hall> Halls => Set<Hall>();
     public DbSet<Booking> Bookings => Set<Booking>();
 

@@ -6,19 +6,19 @@ using MovieTheater.Domain.Entities;
 
 namespace MovieTheater.Infrastructure.Persistence.Configurations;
 
-public class CinemaConfiguration : IEntityTypeConfiguration<Cinema>
+public class CineplexConfiguration : IEntityTypeConfiguration<Cineplex>
 {
-    public void Configure(EntityTypeBuilder<Cinema> builder)
+    public void Configure(EntityTypeBuilder<Cineplex> builder)
     {
-        builder.ToTable("Cinemas");
+        builder.ToTable("Cineplexs");
         builder.HasKey(c => c.Id);
         builder.Property(c => c.Name).IsRequired().HasMaxLength(200);
         builder.Property(c => c.Phone).HasMaxLength(20);
         builder.Property(c => c.Address).IsRequired().HasMaxLength(200);
 
         builder.HasMany(c => c.Halls)
-               .WithOne(h => h.Cinema)
-               .HasForeignKey(h => h.CinemaId);
+               .WithOne(h => h.Cineplex)
+               .HasForeignKey(h => h.CineplexId);
 
     }
 

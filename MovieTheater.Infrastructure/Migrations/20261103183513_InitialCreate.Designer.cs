@@ -12,7 +12,7 @@ using MovieTheater.Infrastructure.Persistence;
 namespace MovieTheater.Infrastructure.Migrations
 {
     [DbContext(typeof(MovieTheaterDbContext))]
-    [Migration("20261102053726_InitialCreate")]
+    [Migration("20261103183513_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -109,7 +109,7 @@ namespace MovieTheater.Infrastructure.Migrations
                     b.ToTable("BookingSeats", (string)null);
                 });
 
-            modelBuilder.Entity("MovieTheater.Domain.Entities.Cinema", b =>
+            modelBuilder.Entity("MovieTheater.Domain.Entities.Cineplex", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -136,7 +136,7 @@ namespace MovieTheater.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cinemas", (string)null);
+                    b.ToTable("Cineplexs", (string)null);
                 });
 
             modelBuilder.Entity("MovieTheater.Domain.Entities.Genre", b =>
@@ -168,7 +168,7 @@ namespace MovieTheater.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CinemaId")
+                    b.Property<int>("CineplexId")
                         .HasColumnType("int");
 
                     b.Property<int>("HallType")
@@ -181,7 +181,7 @@ namespace MovieTheater.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CinemaId");
+                    b.HasIndex("CineplexId");
 
                     b.ToTable("Halls", (string)null);
                 });
@@ -456,13 +456,13 @@ namespace MovieTheater.Infrastructure.Migrations
 
             modelBuilder.Entity("MovieTheater.Domain.Entities.Hall", b =>
                 {
-                    b.HasOne("MovieTheater.Domain.Entities.Cinema", "Cinema")
+                    b.HasOne("MovieTheater.Domain.Entities.Cineplex", "Cineplex")
                         .WithMany("Halls")
-                        .HasForeignKey("CinemaId")
+                        .HasForeignKey("CineplexId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Cinema");
+                    b.Navigation("Cineplex");
                 });
 
             modelBuilder.Entity("MovieTheater.Domain.Entities.MovieGenre", b =>
@@ -532,7 +532,7 @@ namespace MovieTheater.Infrastructure.Migrations
                     b.Navigation("Payments");
                 });
 
-            modelBuilder.Entity("MovieTheater.Domain.Entities.Cinema", b =>
+            modelBuilder.Entity("MovieTheater.Domain.Entities.Cineplex", b =>
                 {
                     b.Navigation("Halls");
                 });

@@ -12,7 +12,7 @@ namespace MovieTheater.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Cinemas",
+                name: "Cineplexs",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -24,7 +24,7 @@ namespace MovieTheater.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cinemas", x => x.Id);
+                    table.PrimaryKey("PK_Cineplexs", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -83,7 +83,7 @@ namespace MovieTheater.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CinemaId = table.Column<int>(type: "int", nullable: false),
+                    CineplexId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     HallType = table.Column<int>(type: "int", nullable: false)
                 },
@@ -91,9 +91,9 @@ namespace MovieTheater.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Halls", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Halls_Cinemas_CinemaId",
-                        column: x => x.CinemaId,
-                        principalTable: "Cinemas",
+                        name: "FK_Halls_Cineplexs_CineplexId",
+                        column: x => x.CineplexId,
+                        principalTable: "Cineplexs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -309,9 +309,9 @@ namespace MovieTheater.Infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Halls_CinemaId",
+                name: "IX_Halls_CineplexId",
                 table: "Halls",
-                column: "CinemaId");
+                column: "CineplexId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MovieGenres_GenreId",
@@ -394,7 +394,7 @@ namespace MovieTheater.Infrastructure.Migrations
                 name: "Movies");
 
             migrationBuilder.DropTable(
-                name: "Cinemas");
+                name: "Cineplexs");
         }
     }
 }
