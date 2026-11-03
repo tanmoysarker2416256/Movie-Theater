@@ -1,10 +1,11 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using MovieTheater.Domain.Entities;
+using MovieTheater.Application.Abstractions;
 
 namespace MovieTheater.Infrastructure.Persistence;
 
-public class MovieTheaterDbContext : DbContext
+public class MovieTheaterDbContext : DbContext , IApplicationDbContext
 {
     public MovieTheaterDbContext(DbContextOptions<MovieTheaterDbContext> options) : base(options)
     {

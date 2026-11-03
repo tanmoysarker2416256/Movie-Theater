@@ -1,3 +1,5 @@
+using MovieTheater.Application.Abstractions;
+using MovieTheater.Application.Movies;
 using Microsoft.EntityFrameworkCore;
 using MovieTheater.Infrastructure.Persistence;
 
@@ -13,6 +15,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<MovieTheaterDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IApplicationDbContext>(sp => sp.GetRequiredService<MovieTheaterDbContext>());
+builder.Services.AddScoped<MovieService>();
 
 var app = builder.Build();
 

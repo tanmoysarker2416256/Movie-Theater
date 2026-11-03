@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTheater.Infrastructure
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTheater.Api", "MovieTheater.Api\MovieTheater.Api.csproj", "{2916AF5A-72D1-4887-84A8-9FF7E8EF7AFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTheater.Application", "MovieTheater.Application\MovieTheater.Application.csproj", "{19060DD8-2379-47B2-8B1F-181604A37A54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2916AF5A-72D1-4887-84A8-9FF7E8EF7AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2916AF5A-72D1-4887-84A8-9FF7E8EF7AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2916AF5A-72D1-4887-84A8-9FF7E8EF7AFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19060DD8-2379-47B2-8B1F-181604A37A54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19060DD8-2379-47B2-8B1F-181604A37A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19060DD8-2379-47B2-8B1F-181604A37A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19060DD8-2379-47B2-8B1F-181604A37A54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

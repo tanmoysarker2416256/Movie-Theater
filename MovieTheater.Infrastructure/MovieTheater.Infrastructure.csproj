@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MovieTheater.Application\MovieTheater.Application.csproj" />
     <ProjectReference Include="..\MovieTheater.Domain\MovieTheater.Domain.csproj" />
   </ItemGroup>
 
