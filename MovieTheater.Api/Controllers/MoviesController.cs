@@ -28,4 +28,15 @@ public class MoviesController : ControllerBase
         var movies = await _movieService.GetComingSoonAsync(ct);
         return Ok(movies);
     }
+
+    [HttpGet("{id:int}")]
+
+    public async Task<ActionResult<MovieDetailsDto>> GetDetails (int id , CancellationToken ct )
+    {
+        var movie = await _movieService.GetDetailsAsync(id, ct);
+        if(movie == null)
+            return NotFound();
+
+        return Ok(movie);
+    }
 }

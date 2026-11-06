@@ -3,8 +3,9 @@
 public record MovieCardDto(
     int Id,
     string Title,
-    string? PosterUrl,
     int DurationMinutes,
-    string Language,
     DateOnly ReleaseDate,
+    string Language,
+    string? PosterUrl,
+    
     IReadOnlyList<string> Genres);
