@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MovieTheater.Application.Movies;
 using MovieTheater.Application.Movies.Dtos;
+using MovieTheater.Application.Shows;
+using MovieTheater.Application.Shows.Dtos;
 
 namespace MovieTheater.Api.Controllers;
 
@@ -9,10 +11,12 @@ namespace MovieTheater.Api.Controllers;
 public class MoviesController : ControllerBase
 {
     private readonly MovieService _movieService;
+    private readonly ShowService _showService;
 
-    public MoviesController(MovieService movieService)
+    public MoviesController(MovieService movieService , ShowService showService)
     {
         _movieService = movieService;
+        _showService = showService;
     }
 
     [HttpGet("now-showing")]
@@ -39,4 +43,13 @@ public class MoviesController : ControllerBase
 
         return Ok(movie);
     }
+    [HttpGet("{id:int}/shows")]
+    public async Task<ActionResult<List<ShowSummaryDto>>> GetShows(
+    int id, DateOnly? date, CancellationToken ct)
+    {
+        var day = date ?? DateOnly.FromDateTime(DateTime.UtcNow.AddHours(6));
+        var shows = await _showService.GetShowsForMovieAsync(id, day, ct);
+        return Ok(shows);
+    }
+
 }

@@ -34,6 +34,7 @@ public class MovieService
 
 
                 m.MovieGenres.Select(mg => mg.Genre.Name).ToList()))
+
             .ToListAsync(ct);
     }
 

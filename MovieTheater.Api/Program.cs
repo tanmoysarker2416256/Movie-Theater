@@ -1,6 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using MovieTheater.Application.Abstractions;
 using MovieTheater.Application.Movies;
-using Microsoft.EntityFrameworkCore;
+using MovieTheater.Application.Shows;
 using MovieTheater.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,7 @@ builder.Services.AddDbContext<MovieTheaterDbContext>(options =>
 
 builder.Services.AddScoped<IApplicationDbContext>(sp => sp.GetRequiredService<MovieTheaterDbContext>());
 builder.Services.AddScoped<MovieService>();
+builder.Services.AddScoped<ShowService>();
 
 var app = builder.Build();
 
